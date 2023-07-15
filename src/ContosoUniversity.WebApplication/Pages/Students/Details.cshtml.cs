@@ -35,6 +35,9 @@ namespace ContosoUniversity.WebApplication.Pages.Students
                 return NotFound();
             }
 
+            #track a custom event in Application Insights
+            logger.LogInformation("Be careful, details page visited", Student);
+
             return Page();
         }
     }

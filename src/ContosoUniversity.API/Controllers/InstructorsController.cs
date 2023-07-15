@@ -133,6 +133,8 @@ namespace ContosoUniversity.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteInstructor([FromRoute] int id)
         {
+            int a = 1 / 0;
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

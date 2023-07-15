@@ -19,6 +19,8 @@ namespace ContosoUniversity.WebApplication.Pages.Departments
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            int a = 1/0;
+
             if (id == null)
             {
                 return NotFound();
