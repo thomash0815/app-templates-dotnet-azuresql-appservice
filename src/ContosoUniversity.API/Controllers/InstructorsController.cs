@@ -133,7 +133,6 @@ namespace ContosoUniversity.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteInstructor([FromRoute] int id)
         {
-            int a = 1 / 0;
 
             if (!ModelState.IsValid)
             {
@@ -145,6 +144,8 @@ namespace ContosoUniversity.API.Controllers
             {
                 return NotFound();
             }
+
+            instructor = null;
 
             _context.Instructors.Remove(instructor);
             await _context.SaveChangesAsync();

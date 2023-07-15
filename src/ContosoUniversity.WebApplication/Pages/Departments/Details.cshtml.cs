@@ -19,7 +19,6 @@ namespace ContosoUniversity.WebApplication.Pages.Departments
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            int a = 1/0;
 
             if (id == null)
             {
@@ -27,6 +26,9 @@ namespace ContosoUniversity.WebApplication.Pages.Departments
             }
 
             var response = await client.CreateClient("client").GetStringAsync("api/Departments/" + id);
+
+            response = null;
+
             Department = JsonConvert.DeserializeObject<Models.APIViewModels.Department>(response);
 
             if (Department == null)
