@@ -37,7 +37,8 @@ namespace ContosoUniversity.WebApplication.Pages.Students
 
             //track a custom event in Application Insights           
 
-            logger.LogInformation("Be careful, details page visited", Student);
+            logger.LogWarning("Be careful, details page visited", Student);
+            logger.LogTrace("trace log, details page visited", Student);
 
             return Page();
         }
